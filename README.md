@@ -1,12 +1,14 @@
 # ApacheJmeter Schema Assertion
 
+[![Maven Tests CI](https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/actions/workflows/run-tests.yaml/badge.svg)](https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/actions/workflows/run-tests.yaml)
+
 a ApacheJmeter assertion plugin to validate JSON/YAML Schema (Based on Sampler response).
 
 ## Features
 
 - Get JSON/YAML Schema from textarea or filepath
 - Use [JsonPath](https://github.com/json-path/JsonPath) expression to extract the schema object
-    
+
 ## Quick Usage
 
 > [Java JDK](https://adoptopenjdk.net/) is required.
