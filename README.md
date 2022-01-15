@@ -1,6 +1,6 @@
 # ApacheJmeter Schema Assertion
 
-a ApacheJmeter assertion plugin to validate JSON/YAML Schema.
+a ApacheJmeter assertion plugin to validate JSON/YAML Schema (Based on Sampler response).
 
 ## Features
 
@@ -24,6 +24,10 @@ chmod +x jmeter_installer.sh
 ./apache-jmeter/bin/jmeter -t Schema-Assertion.jmx
 ```
 
+![Assertion Settings](https://cdn.jsdelivr.net/gh/yeshan333/jsDelivrCDN@main/20220115114549.jpg)
+
+![Assertion Results](https://cdn.jsdelivr.net/gh/yeshan333/jsDelivrCDN@main/20220115114624.jpg)
+
 ## Running Tests
 
 > Maven & JDK 1.8 is required.
@@ -36,7 +40,7 @@ mvn clean test
 
 ## License
 
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
 
 ## Acknowledgements
 
