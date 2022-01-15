@@ -1,0 +1,10 @@
+.idea
+
+.DS_Store
+
+target
+
+examples/apache-jmeter
+
+jmeter.log
+ApacheJmeter_Schema_Assertion.iml

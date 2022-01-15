@@ -1,0 +1,32 @@
+api: verify_oauth_code
+title: check OAuth verify_code
+request:
+  type: object
+  properties:
+    player_id:
+      type: string
+      minLength: 1
+    client_id:
+      type: string
+      minLength: 1
+    verify_code:
+      type: string
+      minLength: 1
+    redirect_uri:
+      type: string
+      minLength: 1
+  required:
+    - player_id
+    - client_id
+    - verify_code
+    - redirect_uri
+
+response:
+  type: object
+  properties:
+    code:
+      type: integer
+    message:
+      type: string
+  required:
+    - code

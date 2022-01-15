@@ -1,0 +1,36 @@
+{
+  "api": "auth_code",
+  "title": "login token",
+  "description": "generate login token",
+  "example": [
+    [{
+      "token": "ya29.CjGXA32cPvYBSxIE0jj52v_iH0FnqiK8kBBlUuAN03HxTsVyBecZsbLx7oCRg9v_p-Ae",
+      "challengeData": "abcdef"
+    }, {
+      "token": "AQGna15lCRcUfHEW2X18qw+B/Q5U61grAapjig3efZADWHsHSs3t0KEud5cFtTZZnRw=",
+      "code": 0,
+      "info": {}
+    }]
+  ],
+  "request": {
+    "type": "object",
+    "properties": {
+      "token": {
+        "type": "string"
+      },
+      "challengeData": {
+        "type": "string"
+      }
+    },
+    "required": ["token", "challengeData"]
+  },
+  "response": {
+    "type": "object",
+    "properties": {
+      "token": {"type": "string"},
+      "uid": {"type": "string"},
+      "info": {"type": "object"}
+    }
+  },
+  "response_code": [200, 401, 402, 405, 406, 409, 410, 462, 504, 10410, 10411, 10412, 10414, 10500, 10501, 10502]
+}
