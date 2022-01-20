@@ -2,15 +2,19 @@ name: Publish Package CI
 
 on: [push]
 
-steps:
-  - uses: actions/checkout@v2
-  - uses: actions/setup-java@v2
-    with:
-      java-version: '8'
-      distribution: 'adopt'
-  - run: mvn package
-  - run: mkdir staging && cp target/*.jar staging
-  - uses: actions/upload-artifact@v2
-    with:
-      name: ApacheJmeter_Schema_Assertion
-      path: staging
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+      - run: mvn package
+      - run: mkdir staging && cp target/*.jar staging
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ApacheJmeter_Schema_Assertion
+          path: staging
