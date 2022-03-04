@@ -1,6 +1,6 @@
 # ApacheJmeter Schema Assertion
 
-[![Maven Tests CI](https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/actions/workflows/run-tests.yaml/badge.svg)](https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/actions/workflows/run-tests.yaml)
+[![Maven Tests CI](https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/actions/workflows/run-tests.yaml/badge.svg)](https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/actions/workflows/run-tests.yaml) ![Code Coverage](.github/badges/jacoco.svg)
 
 a ApacheJmeter assertion plugin to validate JSON/YAML Schema (Based on Sampler response).
 
