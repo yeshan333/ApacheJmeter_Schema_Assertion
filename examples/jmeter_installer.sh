@@ -1,9 +1,9 @@
 #!/bin/sh
 
 _PWD=$(pwd)
-_JMETER_VERSION="5.4.1"
+_JMETER_VERSION="5.4.3"
 _JMETER_DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/apache/jmeter/binaries/apache-jmeter-$_JMETER_VERSION.tgz"
-_SCHEMA_ASSERTION_PLUGIN_NAME="ApacheJmeter_Schema_Assertion-1.0-SNAPSHOT.jar"
+_SCHEMA_ASSERTION_PLUGIN_NAME="ApacheJmeter_Schema_Assertion-1.0.0.jar"
 
 echo "\nDownloading the binary from"  $_JMETER_DOWNLOAD_URL
 curl -L $_JMETER_DOWNLOAD_URL -k > apache-jmeter-$_JMETER_VERSION.tgz
