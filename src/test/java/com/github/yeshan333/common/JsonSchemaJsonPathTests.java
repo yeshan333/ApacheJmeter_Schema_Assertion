@@ -1,4 +1,4 @@
-package com.github.yeshan333.common;
+package io.github.yeshan333.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;

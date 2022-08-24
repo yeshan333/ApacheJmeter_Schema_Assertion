@@ -1,4 +1,4 @@
-package com.github.yeshan333.jmeter.assertions.gui;
+package io.github.yeshan333.jmeter.assertions.gui;
 
 import org.apache.jmeter.gui.util.HorizontalPanel;
 import org.apache.jmeter.gui.util.VerticalPanel;
@@ -11,7 +11,7 @@ import java.awt.BorderLayout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.yeshan333.jmeter.assertions.SchemaAssertion;
+import io.github.yeshan333.jmeter.assertions.SchemaAssertion;
 
 public class SchemaAssertionGui extends AbstractAssertionGui {
     private static final Logger log = LoggerFactory.getLogger(SchemaAssertionGui.class);

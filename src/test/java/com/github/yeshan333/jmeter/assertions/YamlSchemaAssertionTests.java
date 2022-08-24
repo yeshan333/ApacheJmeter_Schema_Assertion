@@ -1,4 +1,4 @@
-package com.github.yeshan333.jmeter.assertions;
+package io.github.yeshan333.jmeter.assertions;
 
 import org.apache.jmeter.assertions.AssertionResult;
 

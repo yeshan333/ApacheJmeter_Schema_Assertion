@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.yeshan333</groupId>
+    <groupId>io.github.yeshan333</groupId>
     <artifactId>ApacheJmeter_Schema_Assertion</artifactId>
     <version>1.0.0</version>
 

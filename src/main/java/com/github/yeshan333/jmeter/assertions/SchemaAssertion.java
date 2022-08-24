@@ -1,4 +1,4 @@
-package com.github.yeshan333.jmeter.assertions;
+package io.github.yeshan333.jmeter.assertions;
 
 import com.networknt.schema.JsonSchema;
 import com.networknt.schema.ValidationMessage;
@@ -23,8 +23,8 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.yeshan333.common.YamlSchemaValidator;
-import com.github.yeshan333.common.JsonSchemaValidator;
+import io.github.yeshan333.common.YamlSchemaValidator;
+import io.github.yeshan333.common.JsonSchemaValidator;
 
 public class SchemaAssertion extends AbstractTestElement implements Serializable, Assertion {
     private static final long serialVersionUID = 234L;
