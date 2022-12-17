@@ -22,14 +22,10 @@ public class YamlSchemaValidatorTests extends YamlSchemaValidator {
             String testYamlSchemaPath = projectBasePath + "/src/test/resources/schema/data_schema.yml";
 
             JsonSchema yamlSchema = getJsonSchemaFromYamlFile(testYamlSchemaPath);
-            // TODO: remove it
-            // System.out.println(yamlSchema);
             yamlSchema.initializeValidators();
             JsonNode node = getJsonNodeFromStringContent("{\"code\": 2}");
 
             Set<ValidationMessage> errors = yamlSchema.validate(node);
-            // TODO: remove it
-            // System.out.println(errors);
             Assertions.assertEquals(0, errors.size());
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -48,8 +44,6 @@ public class YamlSchemaValidatorTests extends YamlSchemaValidator {
             JsonNode node = getJsonNodeFromStringContent("{\"request\": \"2\"}");
 
             Set<ValidationMessage> errors = yamlSchema.validate(node);
-            // TODO: remove it
-            // System.out.println(errors);
             Assertions.assertEquals(1, errors.size());
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -94,8 +88,6 @@ public class YamlSchemaValidatorTests extends YamlSchemaValidator {
                     "    - code");
             JsonNode node = getJsonNodeFromStringContent("{\"code\": 2}");
             Set<ValidationMessage> errors = schema.validate(node);
-            // TODO: Remove it
-            // System.out.println(errors);
             Assertions.assertEquals(0, errors.size());
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -140,8 +132,6 @@ public class YamlSchemaValidatorTests extends YamlSchemaValidator {
                     "    - code");
             JsonNode node = getJsonNodeFromStringContent("{\"code\": \"2\"}");
             Set<ValidationMessage> errors = schema.validate(node);
-            // TODO: Remove it
-            // System.out.println(errors);
             Assertions.assertEquals(1, errors.size());
         } catch (IOException ex) {
             ex.printStackTrace();

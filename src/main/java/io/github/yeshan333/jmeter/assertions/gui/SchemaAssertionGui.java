@@ -58,7 +58,7 @@ public class SchemaAssertionGui extends AbstractAssertionGui {
         log.debug("SchemaAssertionGui.modifyTestElement() called");
         configureTestElement(inElement);
         ((SchemaAssertion) inElement).setJsonSchemaFilePath(schemaPath.getText());
-        ((SchemaAssertion) inElement).setJsonschemaContent(schemaContent.getText());
+        ((SchemaAssertion) inElement).setJsonSchemaContent(schemaContent.getText());
         ((SchemaAssertion) inElement).setJsonPathExpr(jsonPathExpr.getText());
     }
 
@@ -83,7 +83,7 @@ public class SchemaAssertionGui extends AbstractAssertionGui {
         super.configure(el);
         SchemaAssertion assertion = (SchemaAssertion) el;
         schemaPath.setText(assertion.getJsonSchemaFilePath());
-        schemaContent.setText(assertion.getJsonschemaContent());
+        schemaContent.setText(assertion.getJsonSchemaContent());
         jsonPathExpr.setText(assertion.getJsonPathExpr());
     }
 

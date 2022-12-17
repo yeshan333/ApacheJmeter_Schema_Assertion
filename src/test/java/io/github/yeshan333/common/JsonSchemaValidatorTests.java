@@ -23,8 +23,6 @@ class JsonSchemaValidatorTests extends JsonSchemaValidator {
 
             ObjectMapper mapper = new ObjectMapper();
             JsonNode jsonSchemaNode = mapper.readTree(Paths.get(testJsonSchemaPath).toFile());
-            // TODO: Remove it
-            // System.out.println(jsonSchemaNode);
             JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
 
             // TODO: Inject Config
@@ -39,8 +37,6 @@ class JsonSchemaValidatorTests extends JsonSchemaValidator {
                     "    \"token\": \"4sadasdada\"\n" +
                     "}");
             Set<ValidationMessage> errors = jsonSchema.validate(node);
-            // TODO: Remove it
-            // System.out.println(errors);
             Assertions.assertEquals(0, errors.size());
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -57,8 +53,6 @@ class JsonSchemaValidatorTests extends JsonSchemaValidator {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode jsonSchemaNode = mapper.readTree(Paths.get(testJsonSchemaPath).toFile());
 
-            // TODO: Remove it
-            // System.out.println(jsonSchemaNode);
             JsonSchemaFactory factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
 
             // Inject Config
@@ -73,8 +67,6 @@ class JsonSchemaValidatorTests extends JsonSchemaValidator {
                     "    \"token\": 2\n" +
                     "}");
             Set<ValidationMessage> errors = jsonSchema.validate(node);
-            // TODO: Remove it
-            // System.out.println(errors);
             Assertions.assertEquals(1, errors.size());
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -129,8 +121,6 @@ class JsonSchemaValidatorTests extends JsonSchemaValidator {
                     "    \"ticket\": \"GG\"\n" +
                     "}");
             Set<ValidationMessage> errors = schema.validate(node);
-            // TODO: Remove it
-            // System.out.println(errors);
             Assertions.assertEquals(0, errors.size());
         } catch (Exception e) {
             e.printStackTrace();
@@ -182,8 +172,6 @@ class JsonSchemaValidatorTests extends JsonSchemaValidator {
                     "}");
             JsonNode node = getJsonNodeFromStringContent("{\"id\": \"2\"}");
             Set<ValidationMessage> errors = schema.validate(node);
-            // TODO: Remove it
-            // System.out.println(errors);
             Assertions.assertEquals(1, errors.size());
         } catch (Exception e) {
             e.printStackTrace();

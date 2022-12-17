@@ -47,11 +47,11 @@ public class SchemaAssertion extends AbstractTestElement implements Serializable
         return getPropertyAsString(SCHEMA_FILEPATH_KEY);
     }
 
-    public void setJsonschemaContent(String jsonschemaContent) {
+    public void setJsonSchemaContent(String jsonschemaContent) {
         setProperty(SCHEMA_CONTENT_KEY, jsonschemaContent);
     }
 
-    public String getJsonschemaContent() {
+    public String getJsonSchemaContent() {
         return getPropertyAsString(SCHEMA_CONTENT_KEY);
     }
 
@@ -94,7 +94,7 @@ public class SchemaAssertion extends AbstractTestElement implements Serializable
         }
 
         String jsonSchemaFilePath = getJsonSchemaFilePath();
-        String jsonSchemaContent = getJsonschemaContent();
+        String jsonSchemaContent = getJsonSchemaContent();
         String jsonPathExpr = getJsonPathExpr();
         log.debug("response Json String: {}, json schema file path: {}", resultData, jsonSchemaFilePath);
 
