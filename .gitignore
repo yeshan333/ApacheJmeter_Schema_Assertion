@@ -5,7 +5,7 @@
 
 target
 
-examples/apache-jmeter
+examples/apache-jmeter*
 
 jmeter.log
 ApacheJmeter_Schema_Assertion.iml

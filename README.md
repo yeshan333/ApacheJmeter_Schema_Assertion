@@ -25,7 +25,7 @@ chmod +x jmeter_installer.sh
 # install ApacheJmeter
 ./jmeter_installer.sh
 
-./apache-jmeter/bin/jmeter -t Schema-Assertion.jmx
+./apache-jmeter-5.5/bin/jmeter -t Schema_Assertion_5.5.jmx
 ```
 
 ![Assertion Settings](https://cdn.jsdelivr.net/gh/yeshan333/jsDelivrCDN@main/20220115114549.jpg)
@@ -34,7 +34,7 @@ chmod +x jmeter_installer.sh
 
 ## Running Tests
 
-> Maven & JDK 1.8 is required.
+> Maven & JDK 1.8+ is required.
 
 To run tests, run the following command:
 

@@ -6,13 +6,13 @@
 
     <groupId>io.github.yeshan333</groupId>
     <artifactId>ApacheJmeter_Schema_Assertion</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <jmeter.version>5.4.3</jmeter.version>
+        <jmeter.version>5.5</jmeter.version>
     </properties>
 
     <dependencies>
