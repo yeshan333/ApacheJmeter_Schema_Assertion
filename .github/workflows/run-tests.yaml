@@ -1,6 +1,9 @@
 name: Maven Tests CI
 
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
