@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _PWD=$(pwd)
-_JMETER_VERSION="5.5.2"
+_JMETER_VERSION="5.6.2"
 _JMETER_DOWNLOAD_URL="https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$_JMETER_VERSION.tgz"
 _SCHEMA_ASSERTION_PLUGIN_NAME="ApacheJmeter_Schema_Assertion-1.2.0.jar"
 
