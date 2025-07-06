@@ -41,12 +41,12 @@ jobs:
           fi
 
       - name: Upload JaCoCo coverage report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: jacoco-report
           path: target/site/jacoco/
 
       - name: codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         with:
           directory: target/site/jacoco/
