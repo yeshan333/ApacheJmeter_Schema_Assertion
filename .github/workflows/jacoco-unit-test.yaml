@@ -1,4 +1,4 @@
-name: build
+name: coverage-test
 
 on:
   workflow_dispatch:

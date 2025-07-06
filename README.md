@@ -25,7 +25,7 @@ chmod +x jmeter_installer.sh
 # install ApacheJmeter
 ./jmeter_installer.sh
 
-./apache-jmeter-5.5/bin/jmeter -t Schema_Assertion_5.5.jmx
+./apache-jmeter-5.6.3/bin/jmeter -t Schema_Assertion_5.5.jmx
 ```
 
 ![Assertion Settings](https://cdn.jsdelivr.net/gh/yeshan333/jsDelivrCDN@main/20220115114549.jpg)
@@ -55,4 +55,3 @@ Thanks for these awesome resources that were used during the development of the 
 - [YAML Schema](https://asdf-standard.readthedocs.io/en/1.5.0/schemas/yaml_schema.html#Schema%20Definitions)
 - [https://github.com/networknt/json-schema-validator](https://github.com/networknt/json-schema-validator)
 - [https://github.com/json-path/JsonPath](https://github.com/json-path/JsonPath)
-

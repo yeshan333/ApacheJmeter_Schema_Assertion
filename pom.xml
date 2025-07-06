@@ -6,7 +6,7 @@
 
     <groupId>io.github.yeshan333</groupId>
     <artifactId>ApacheJmeter_Schema_Assertion</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -85,6 +85,13 @@
         <!--            <artifactId>slf4j-log4j12</artifactId>-->
         <!--            <version>1.7.30</version>-->
         <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.23.1</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
