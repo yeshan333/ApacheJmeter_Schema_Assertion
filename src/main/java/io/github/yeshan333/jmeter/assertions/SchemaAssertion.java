@@ -3,6 +3,7 @@ package io.github.yeshan333.jmeter.assertions;
 import com.networknt.schema.JsonSchema;
 import com.networknt.schema.ValidationMessage;
 
+import org.apache.tika.Tika;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.jayway.jsonpath.PathNotFoundException;
 
@@ -17,7 +18,6 @@ import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Locale;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -67,12 +67,11 @@ public class SchemaAssertion extends AbstractTestElement implements Serializable
      * Get MimeType From text
      */
     public String getSchemaMimeType(String schemaSource, boolean isFromSchemaFile) {
+        String mimeType;
         if(isFromSchemaFile) {
-            String lowerCaseSource = schemaSource.toLowerCase(Locale.ROOT);
-            if(lowerCaseSource.endsWith(".json")) {
-                return "application/json";
-            }
-            return "text/x-yaml";
+            Tika tika = new Tika();
+            mimeType = tika.detect(schemaSource);
+            return mimeType;
         }
 
         if(schemaSource.startsWith("{")) {
