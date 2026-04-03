@@ -1,0 +1,93 @@
+name: Integration Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, reopened, review_requested, edited]
+  push:
+    branches: [main]
+
+jobs:
+  integration-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          java-version: "8"
+          distribution: "temurin"
+
+      - name: Build plugin JAR
+        run: mvn clean package -DskipTests
+
+      - name: Download & install JMeter
+        run: |
+          JMETER_VERSION="5.6.3"
+          JMETER_URL="https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz"
+          curl -L "$JMETER_URL" -o apache-jmeter.tgz
+          tar zxvf apache-jmeter.tgz
+          cp ./examples/ApacheJmeter_Schema_Assertion-*.jar \
+             ./apache-jmeter-${JMETER_VERSION}/lib/ext/
+
+      - name: Run JMeter test plan
+        run: |
+          ./apache-jmeter-5.6.3/bin/jmeter \
+          -t examples/Schema_Assertion_5.5.jmx \
+          -n \
+          -l result.jtl \
+          -j jmeter.log \
+          -Jjmeter.save.saveservice.output_format=csv
+
+      - name: Verify schema assertion results
+        run: |
+          set -e
+
+          # JTL CSV header: timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,...
+          # Skip header line, count sampler results by success column (8th field)
+          TOTAL=$(tail -n +2 result.jtl | wc -l)
+          PASSED=$(tail -n +2 result.jtl | awk -F',' '$8 == "true"' | wc -l)
+          FAILED=$(tail -n +2 result.jtl | awk -F',' '$8 == "false"' | wc -l)
+
+          echo "Total samplers: $TOTAL"
+          echo "Passed: $PASSED"
+          echo "Failed: $FAILED"
+
+          # Print failed sampler details for debugging
+          if [ "$FAILED" -gt 0 ]; then
+            echo ""
+            echo "Failed samplers:"
+            tail -n +2 result.jtl | awk -F',' '$8 == "false" {print "  - "$3": "$9}'
+          fi
+
+          # Schema Assertion should produce mixed results:
+          # - jsonplaceholder (login:integer vs string) → FAIL
+          # - github[json] (login:string) → PASS
+          # - github[yaml] (login:integer vs string) → FAIL
+          if [ "$FAILED" -lt 1 ]; then
+            echo ""
+            echo "ERROR: Expected at least 1 failed assertion (schema validation may not be working)"
+            exit 1
+          fi
+
+          if [ "$PASSED" -lt 1 ]; then
+            echo ""
+            echo "ERROR: Expected at least 1 passed assertion"
+            exit 1
+          fi
+
+          echo ""
+          echo "Schema assertion integration test PASSED"
+          echo "- $PASSED sampler(s) passed schema validation"
+          echo "- $FAILED sampler(s) failed schema validation (as expected)"
+
+      - name: Upload JMeter log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jmeter-debug-logs
+          path: |
+            jmeter.log
+            result.jtl
