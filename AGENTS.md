@@ -5,7 +5,7 @@ Agent instructions for coding in this repository.
 ## Project Overview
 
 Apache JMeter plugin (assertion component) that validates sampler responses against JSON/YAML Schema.
-Java 8 + Maven. Package namespace: `io.github.yeshan333.*`
+Java 11 + Maven. Package namespace: `io.github.yeshan333.*`
 
 ## Build / Test Commands
 
@@ -91,11 +91,12 @@ examples/                              # JMX test plans + installer script
 
 | Library | Version | Purpose |
 |---------|---------|---------|
-| Apache JMeter | 5.5 | Assertion API & GUI |
+| Apache JMeter | 5.6.3 | Assertion API & GUI |
 | networknt json-schema-validator | 1.0.64 | JSON Schema validation |
-| Jackson (core/databind/yaml) | 2.12.x | JSON/YAML parsing |
-| JsonPath (jayway) | 2.9.0 | JSONPath expressions |
-| Apache Tika | 1.28.5 | MIME type detection |
+| Jackson core/databind/annotations | 2.18.6 (provided) | JSON parsing (JMeter supplies at runtime) |
+| jackson-dataformat-yaml | 2.16.1 (compile) | YAML parsing (bundled, must match JMeter's jackson-core) |
+| JsonPath (jayway) | 2.10.0 | JSONPath expressions |
+| Apache Tika | 3.2.2 (provided) | MIME type detection |
 
 ## CI Workflows
 
