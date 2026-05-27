@@ -35,7 +35,7 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Verify packaged JAR
-        run: ls -l ./examples/ApacheJmeter_Schema_Assertion-*.jar
+        run: stat ./examples/ApacheJmeter_Schema_Assertion-*.jar
 
       - name: Upload JAR to GitHub release
         uses: softprops/action-gh-release@v2
