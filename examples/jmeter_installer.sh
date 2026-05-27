@@ -3,7 +3,7 @@
 _PWD=$(pwd)
 _JMETER_VERSION="5.6.3"
 _JMETER_DOWNLOAD_URL="https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$_JMETER_VERSION.tgz"
-_SCHEMA_ASSERTION_VERSION="1.3.0"
+_SCHEMA_ASSERTION_VERSION="1.3.1"
 _SCHEMA_ASSERTION_PLUGIN_NAME="ApacheJmeter_Schema_Assertion-${_SCHEMA_ASSERTION_VERSION}.jar"
 _SCHEMA_ASSERTION_DOWNLOAD_URL="https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/releases/download/v${_SCHEMA_ASSERTION_VERSION}/${_SCHEMA_ASSERTION_PLUGIN_NAME}"
 
