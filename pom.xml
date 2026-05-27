@@ -6,7 +6,7 @@
 
     <groupId>io.github.yeshan333</groupId>
     <artifactId>ApacheJmeter_Schema_Assertion</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -181,7 +181,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.12</version>
+                <version>0.8.14</version>
                 <executions>
                     <execution>
                         <goals>
