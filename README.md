@@ -11,9 +11,13 @@ a ApacheJmeter assertion plugin to validate JSON/YAML Schema (Based on Sampler r
 - Get JSON/YAML Schema from textarea or filepath
 - Use [JsonPath](https://github.com/json-path/JsonPath) expression to extract the schema object
 
+## Installation
+
+Download the latest plugin JAR from [GitHub Releases](https://github.com/yeshan333/ApacheJmeter_Schema_Assertion/releases) and copy it to `<JMETER_HOME>/lib/ext/`.
+
 ## Quick Usage
 
-> [Java JDK](https://adoptopenjdk.net/) is required.
+> [Java JDK 11+](https://adoptium.net/) is required.
 
 ```shell
 git clone git@github.com:yeshan333/ApacheJmeter_Schema_Assertion.git
@@ -22,7 +26,7 @@ cd ApacheJmeter_Schema_Assertion/examples
 
 chmod +x jmeter_installer.sh
 
-# install ApacheJmeter
+# install ApacheJmeter and the plugin
 ./jmeter_installer.sh
 
 ./apache-jmeter-5.6.3/bin/jmeter -t Schema_Assertion_5.5.jmx
@@ -34,7 +38,7 @@ chmod +x jmeter_installer.sh
 
 ## Running Tests
 
-> Maven & JDK 1.8+ is required.
+> Maven & JDK 11+ is required.
 
 To run tests, run the following command:
 

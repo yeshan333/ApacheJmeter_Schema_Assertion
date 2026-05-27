@@ -3,7 +3,7 @@
 _PWD=$(pwd)
 _JMETER_VERSION="5.6.3"
 _JMETER_DOWNLOAD_URL="https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$_JMETER_VERSION.tgz"
-_SCHEMA_ASSERTION_PLUGIN_NAME="ApacheJmeter_Schema_Assertion-1.2.0.jar"
+_SCHEMA_ASSERTION_PLUGIN_NAME="ApacheJmeter_Schema_Assertion-1.3.0.jar"
 
 echo "\nDownloading the binary from" $_JMETER_DOWNLOAD_URL
 curl -L $_JMETER_DOWNLOAD_URL -k >apache-jmeter-$_JMETER_VERSION.tgz

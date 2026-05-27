@@ -6,6 +6,7 @@
 target
 
 examples/apache-jmeter*
+examples/*.jar
 
 jmeter.log
 ApacheJmeter_Schema_Assertion.iml
